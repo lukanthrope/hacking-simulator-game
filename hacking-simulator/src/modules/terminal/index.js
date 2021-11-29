@@ -41,7 +41,7 @@ export const TerminalApp = (props) => {
         <Terminal
           ref={terminal}
           commands={commands || {}}
-          welcomeMessage={"Terminal@user"}
+          welcomeMessage={"Terminal@user\nType 'help' to see the commands"}
           promptLabel={"me@React:~$"}
           style={{ height: 500 }}
         />

@@ -1,24 +1,35 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import logo from "../../../static/duckduckgo.png";
+import { SET_ACTIVE_PEOPLE_ITEM_ID } from "../../../store/actions";
 import { SearchResultItem } from "./components/search-result-item.component";
 
 const twitterUrl = "https://twitter.com";
 const facebookUrl = "https://facebook.com";
 
-export const DuckDuck = () => {
-  const [search, setSearch] = useState("");
+export const DuckDuck = ({ setIndex, search, setSearch }) => {
   const people = useSelector((state) => state.people.items);
   const [result, setResult] = useState(null);
+  const dispatch = useDispatch();
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (search)
+      setResult(
+        people.find((it) => it.name.toLowerCase() === search.toLowerCase())
+      );
+  }, []);
 
+  const handleSearch = () => {
     if (!search) return;
 
     setResult(
       people.find((it) => it.name.toLowerCase() === search.toLowerCase())
     );
+  };
+
+  const redirect = (pageId) => {
+    dispatch({ type: SET_ACTIVE_PEOPLE_ITEM_ID, payload: { id: result.id } });
+    setIndex(pageId);
   };
 
   const renderResult = () => {
@@ -31,12 +42,14 @@ export const DuckDuck = () => {
           <SearchResultItem
             url={twitterUrl}
             clickableUrl={`${result.name} - Twitter`}
+            onClick={() => redirect(1)}
           />
         )}
         {result.facebook && (
           <SearchResultItem
             url={facebookUrl}
             clickableUrl={`${result.name} - Facebook`}
+            onClick={() => redirect(2)}
           />
         )}
       </>
@@ -51,9 +64,7 @@ export const DuckDuck = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      <div>
-        {renderResult()}
-      </div>
+      <div>{renderResult()}</div>
     </div>
   );
 };

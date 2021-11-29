@@ -1,4 +1,7 @@
+import { SET_ACTIVE_PEOPLE_ITEM_ID } from "../actions";
+
 const initialState = {
+  activeItemId: null,
   items: [
     {
       id: 1,
@@ -49,7 +52,7 @@ const initialState = {
           {
             id: 4,
             content:
-              "https://lh3.googleusercontent.com/proxy/KnkaVGXs-icY0sM9yyiMWbhNZ-iqTxT3EjhkAkIYGCWysbL_iEMZigUNR6BduA1p7RXbrGLHmOWH4qNsav-QU-k",
+              "https://i.redd.it/3hjm92c5p7a41.jpg",
           },
         ],
       },
@@ -168,6 +171,12 @@ const initialState = {
 
 export const peopleReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_ACTIVE_PEOPLE_ITEM_ID:
+      return {
+        ...state,
+        activeItemId: action.payload.id,
+      };
+
     default:
       return state;
   }
