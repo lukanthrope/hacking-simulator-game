@@ -1,4 +1,4 @@
-import { DnDWrapper } from '../../components';
+import { DnDWrapper } from "../../components";
 import {
   MainContainer,
   ChatContainer,
@@ -6,23 +6,42 @@ import {
   Message,
   MessageInput,
 } from "@chatscope/chat-ui-kit-react";
+import { useDispatch, useSelector } from "react-redux";
+import { appendChatMesssage } from "../../store/actions";
 
 export const ChatApp = (props) => {
+  const messages = useSelector((state) => state.chat.items);
+  const dispatch = useDispatch();
+
   return (
-    <DnDWrapper { ...props } style={{ width: 500, height: 'auto' }} title="Telegamach">
+    <DnDWrapper
+      {...props}
+      style={{ width: 500, height: "auto" }}
+      title="Telegamach"
+    >
       <MainContainer style={{ height: 500 }}>
         <ChatContainer>
           <MessageList>
-            <Message
-              model={{
-                message: "Hello my friend",
-                sentTime: "just now",
-                sender: "Joe",
-              }}
-            />
+            {messages.map((item, index) => (
+              <Message
+                key={index}
+                model={{
+                  message: item.message,
+                  direction: item.direction,
+                }}
+              />
+            ))}
           </MessageList>
-          <MessageInput placeholder="Type message here" />
+          <MessageInput
+            placeholder="Type message here"
+            onSend={(v) =>
+              dispatch(
+                appendChatMesssage({ message: v, direction: "outgoing" })
+              )
+            }
+          />
         </ChatContainer>
       </MainContainer>
-    </DnDWrapper>)
-}
+    </DnDWrapper>
+  );
+};

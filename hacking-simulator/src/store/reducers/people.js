@@ -7,6 +7,7 @@ const initialState = {
       id: 1,
       name: "Bob Dylan",
       description: "Fathers friend",
+      phoneNumber: "+113452",
       avatarUrl:
         "https://img.discogs.com/z-bsPj7isv_UpZfLE70adNDlDp8=/600x450/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-59792-1400061862-9692.jpeg.jpg",
       twitter: {
