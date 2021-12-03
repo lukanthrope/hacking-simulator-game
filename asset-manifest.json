@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/hacking-simulator-game/static/css/main.fd31a265.chunk.css",
+    "main.js": "/hacking-simulator-game/static/js/main.02b586e6.chunk.js",
+    "main.js.map": "/hacking-simulator-game/static/js/main.02b586e6.chunk.js.map",
+    "runtime-main.js": "/hacking-simulator-game/static/js/runtime-main.79490dc2.js",
+    "runtime-main.js.map": "/hacking-simulator-game/static/js/runtime-main.79490dc2.js.map",
+    "static/css/2.d5fce7f2.chunk.css": "/hacking-simulator-game/static/css/2.d5fce7f2.chunk.css",
+    "static/js/2.bcbbd228.chunk.js": "/hacking-simulator-game/static/js/2.bcbbd228.chunk.js",
+    "static/js/2.bcbbd228.chunk.js.map": "/hacking-simulator-game/static/js/2.bcbbd228.chunk.js.map",
+    "static/js/3.b13a44f5.chunk.js": "/hacking-simulator-game/static/js/3.b13a44f5.chunk.js",
+    "static/js/3.b13a44f5.chunk.js.map": "/hacking-simulator-game/static/js/3.b13a44f5.chunk.js.map",
+    "index.html": "/hacking-simulator-game/index.html",
+    "static/css/2.d5fce7f2.chunk.css.map": "/hacking-simulator-game/static/css/2.d5fce7f2.chunk.css.map",
+    "static/css/main.fd31a265.chunk.css.map": "/hacking-simulator-game/static/css/main.fd31a265.chunk.css.map",
+    "static/js/2.bcbbd228.chunk.js.LICENSE.txt": "/hacking-simulator-game/static/js/2.bcbbd228.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/hacking-simulator-game/static/media/bg.39ea0782.jpg",
+    "static/media/duckduckgo.4ae284b0.png": "/hacking-simulator-game/static/media/duckduckgo.4ae284b0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79490dc2.js",
+    "static/css/2.d5fce7f2.chunk.css",
+    "static/js/2.bcbbd228.chunk.js",
+    "static/css/main.fd31a265.chunk.css",
+    "static/js/main.02b586e6.chunk.js"
+  ]
+}
